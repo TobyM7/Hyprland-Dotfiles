@@ -1,6 +1,6 @@
 # Hyprland Configuration
 
-![Screenshot](https://github.com/TobyM7/Hyrpland-Dotfiles/Assets/screenshot.png)
+![Screenshot](https://github.com/TobyM7/Hyrpland-Dotfiles/Documents/screenshot.png)
 
 ### Yay
 
