@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Function to install yay
+install_yay() {
+    
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si --noconfirm
+    cd ..
+}
+
+# Check if yay is installed, if not, install it
+if ! command -v yay &>/dev/null; then
+    echo "yay not found. Installing yay..."
+    install_yay
+else
+    read -p "yay is already installed. Do you want to reinstall it? (y/n): " reinstall_choice
+    if [[ "$reinstall_choice" =~ ^[Yy]$ ]]; then
+        install_yay
+    fi
+fi
+
+# Check if packages.txt exists
+if [ ! -f packages.txt ]; then
+    echo "Error: packages.txt not found."
+    exit 1
+fi
+
+# Install packages listed in packages.txt using yay
+echo "Installing packages from packages.txt... will proably take ages"
+yay -S --needed - < packages.txt
+
+# Ask if the user wants to delete yay directory
+read -p "Do you want to delete the yay directory now? (y/n): " delete_choice
+if [[ "$delete_choice" =~ ^[Yy]$ ]]; then
+    echo "Deleting yay directory..."
+    rm -rf yay
+fi
