@@ -1,0 +1,69 @@
+[global]
+    follow = mouse
+    indicate_hidden = yes
+
+    offset = 10x10
+
+    notification_height = 0
+
+    separator_height = 2
+
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 0
+    frame_width = 2
+
+    frame_color = "#89B4FA"
+    separator_color = frame
+
+    sort = yes
+    idle_threshold = 120
+    font = monospace 10
+    line_height = 0
+    markup = full
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    stack_duplicates = true
+    hide_duplicate_count = false
+
+    show_indicators = yes
+
+    min_icon_size = 0
+    max_icon_size = 64
+
+    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/actions/:/usr/share/icons/Papirus-Dark/16x16/animations/:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/icons/Papirus-Dark/16x16/categories/:/usr/share/icons/Papirus-Dark/16x16/emblems/:/usr/share/icons/Papirus-Dark/16x16/emotes/:/usr/share/icons/Papirus-Dark/16x16/devices/mimetypes:/usr/share/icons/Papirus-Dark/16x16/panel/:/usr/share/icons/Papirus-Dark/16x16/places/
+
+    dmenu = /usr/bin/wofi -p dunst:
+    browser = /usr/bin/firefox --new-tab
+
+    title = Dunst
+    class = Dunst
+
+    corner_radius = 10
+    timeout = 5
+    font = Monospace 10
+[urgency_low]
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#282a36"
+    foreground = "#6272a4"
+    timeout = 10
+    # Icon for notifications with low urgency, uncomment to enable
+    #new_icon = /path/to/icon
+
+[urgency_normal]
+    background = "#282a36"
+    foreground = "#bd93f9"
+    timeout = 10
+    # Icon for notifications with normal urgency, uncomment to enable
+    #new_icon = /path/to/icon
+
+[urgency_critical]
+    background = "#ff5555"
+    foreground = "#f8f8f2"
+    frame_color = "#ff5555"
+    timeout = 0
+    # Icon for notifications with critical urgency, uncomment to enable
+    #new_icon = /path/to/icon
