@@ -1,6 +1,6 @@
 # Hyprland Configuration
 
-![Screenshot](https://github.com/TobyM7/Hyrpland-Dotfiles/Documents/screenshot.png)
+![Screenshot](https://github.com/TobyM7/Hyprland-Dotfiles/blob/main/Documents/screenshot.png)
 
 ### Yay
 
@@ -17,7 +17,7 @@ makepkg -si
 ``` bash
 yay -S --needed - < packages.txt
 ```
-
+You can edit the package list to change what packages you wnat to install (eg installing a different web browser)
 ## References
 
 - Official Hyprland GitHub: <https://github.com/hyprwm/Hyprland>
