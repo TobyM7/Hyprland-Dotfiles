@@ -2,7 +2,6 @@ acpid
 adobe-source-code-pro-fonts
 base
 base-devel
-bashtop
 bat
 bc
 blueberry
@@ -46,7 +45,6 @@ linux
 linux-firmware
 lolcat
 lsd
-lxappearance
 lxqt-archiver
 man-db
 micro
@@ -63,7 +61,6 @@ openrgb
 otf-firamono-nerd
 otf-sora
 pamixer
-papirus-icon-theme
 pavucontrol
 plasma-browser-integration
 playerctl
@@ -83,9 +80,6 @@ sddm-git
 sddm-theme-corners-git
 socat
 sox
-stacer
-starship
-swaybg
 swayidle
 swaylock-effects
 swww
@@ -112,5 +106,4 @@ wlogout
 wofi
 xclip
 xorg-xkill
-yay-bin
 zram-generator
