@@ -12,24 +12,24 @@ Staring:
 - **File Manager** • [Thunar](https://wiki.archlinux.org/title/Thunar)
 
 ## Installation
-####Run this command inside the Hyprland-Dotfiles folder
+#### Run this command inside the Hyprland-Dotfiles folder
 
 To install run the install scipt that is inside the Documents folder
 
-####Remember to BACKUP YOUR FILES
+#### Remember to BACKUP YOUR FILES
 
-###Install git
+### Install git
 ```
 sudo pacman -S git 
 git clone https://github.com/TobyM7/Hyprland-Dotfiles.git
 ```
-###Running the Script
+### Running the Script
 ```
 cd Hyprland-Dotfiles 
 chmod +x Documents/install
 Documents/install
 ```
-##Post installation
+## Post installation
 To set theme, icons etc open GTK settings using the run menu (SUPER+O)
 
 ## Key Bindings
