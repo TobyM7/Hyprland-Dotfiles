@@ -14,7 +14,7 @@ printf "$(tput setaf 2) Welcome to the my Hyrpland Dotfile installer!\n $(tput s
 
 sleep 2
 
-printf "$RED BACKUP YOUR FILES
+printf "$YELLOW BACKUP YOUR FILES
 This script may replace some configs and files!"
 
 sleep 2
@@ -63,8 +63,8 @@ read -n1 -rep "${CAT} Would you like to install the packages? (y/n)" inst
 echo
 
 if [[ $inst =~ ^[Nn]$ ]]; then
-    printf "${YELLOW} No packages installed. Goodbye! \n"
-            exit 1
+    printf "${YELLOW} No packages installed. \n"
+            
         fi
 
 if [[ $inst =~ ^[Yy]$ ]]; then
@@ -112,7 +112,7 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     cp -r .local/icons ~/.local/ 2>&1 | tee -a $LOG
     cp -r .local/share/fonts ~/.local/ 2>&1 | tee -a $LOG
     cp -r .local/share/icons ~/.local/ 2>&1 | tee -a $LOG
-    cp -r Documents/bin/  ~/Documents 2>&1 | tee -a $LOG
+    cp -r Documents/bin/*  ~/Documents 2>&1 | tee -a $LOG
     
     # Set some files as exacutable 
     chmod +x ~/Documents/launch
@@ -140,6 +140,27 @@ if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
     echo -e "\n"
     echo -e "Enabling SDDM service...\n"
     sudo systemctl enable sddm
+    sleep 3
+fi
+
+### Enable SDDM Autologin ###
+read -n1 -rep 'Would you like to enable SDDM and set the theme? (y,n)' SDDM
+if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
+    LOC="/etc/sddm.conf"
+    echo -e "The following has been added to $LOC.\n"
+    echo -e "[Theme]\nThemeDir=/usr/share/sddm/themes \nCurrent=corners" | sudo tee -a $LOC
+    echo -e "\n"
+    echo -e "Enabling SDDM service...\n"
+    sudo systemctl enable sddm
+    sleep 3
+fi
+
+### Enable BLE ###
+read -n1 -rep 'Would you like to install ble.sh? (y,n)' BLE
+if [[ $BLE == "Y" || $BLE == "y" ]]; then
+    echo -e "Installing ble.sh.\n"
+    git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+    make -C ble.sh install PREFIX=~/.local
     sleep 3
 fi
 
