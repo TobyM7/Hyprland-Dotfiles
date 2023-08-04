@@ -1,24 +1,55 @@
-# Hyprland Configuration
-
+#Hello👋
+Feel free to explore and incorporate what you like into your own configs (If anything). 
+If you have any questions, comments or suggestions, open an issue or PR!
 ![Screenshot](https://github.com/TobyM7/Hyprland-Dotfiles/blob/main/Documents/screenshot.png)
+- **Window Manager** • [Hyprland](https://github.com/hyprwm/Hyprland)
+- **Shell** • [Bash](https://www.gnu.org/software/bash/) with
+  [ble.sh](https://github.com/akinomyoga/ble.sh)
+- **Terminal** • [Kitty](https://github.com/wez/wezterm)
+- **Panel** • [Waybar](https://github.com/Alexays/Waybar)
+- **Notify Daemon** • [Dunst](https://github.com/dunst-project/dunst)
+- **Launcher** • [Rofi](https://github.com/davatorium/rofi) 
+- **File Manager** • [Thunar](https://wiki.archlinux.org/title/Thunar)
 
-### Yay
+### Installation
+**Important**: Run this command inside the Hyprland-Dotfiles folder
 
-**Important**: Do NOT install or run yay as ROOT
+To install run the install scipt that is inside the Documents folder
+**Important**: Remember to BACKUP YOUR FILES
+
+Install git
+```
+sudo pacman -S git 
+git clone https://github.com/TobyM7/Hyprland-Dotfiles.git
+```
 
 ```
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+cd Hyprland-Dotfiles 
+chmod +x Documents/install
+Documents/install
 ```
 
-### Required Packages
+## Key Bindings
+You Can press super F1 to see a list of all keybindings
+But these are some of the main ones
+- `SUPER+SHIFT+ENTER`: Open terminal(Kitty)
+- `SUPER+1,...9,0`:   Switch workspace
+- `SUPER+SHIFT+1,...9,0`: Move to workspace
+- `SUPER+SHIFT+C`: Kill active Window
+- `SUPER+SHIFT+Q`: Quit Hyprland
+- `SUPER+SHIFT+P`: Power menu
+- `SUPER+SHIFT+F`: FullScreen
+- `SUPER+T`: Thunar
+- `SUPER+O`: Run Menu
+- `SUPER+B`: Brave
+- `SUPER+E`: Edge web browser (Yuck I know. Not installed by default but I need for school )
+- `SUPER+W`: Changes Wallpaper (Stored in ~/.config/hypr/wallpapers/)
+## Roadmap
 
-``` bash
-yay -S --needed - < packages.txt
-```
-You can edit the package list to change what packages you wnat to install (eg installing a different web browser)
-## References
+- [ ] Make the installation script install video drivers and backup configs
+
+
+## References and Credits
 
 - Official Hyprland GitHub: <https://github.com/hyprwm/Hyprland>
 - Ble (for bash): <https://github.com/akinomyoga/ble.sh>
