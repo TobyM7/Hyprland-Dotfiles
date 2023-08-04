@@ -1,7 +1,7 @@
-##Hello👋
+## Hello👋
 Feel free to explore and incorporate what you like into your own configs (If anything). If you have any questions, comments or suggestions, open an issue or PR!
 ![Screenshot](https://github.com/TobyM7/Hyprland-Dotfiles/blob/main/Documents/screenshot.png)
-Staring:
+### Staring:
 - **Window Manager** • [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Shell** • [Bash](https://www.gnu.org/software/bash/) with
   [ble.sh](https://github.com/akinomyoga/ble.sh)
@@ -12,11 +12,11 @@ Staring:
 - **File Manager** • [Thunar](https://wiki.archlinux.org/title/Thunar)
 
 ## Installation
-#### Run this command inside the Hyprland-Dotfiles folder
+### Run this command inside the Hyprland-Dotfiles folder
 
 To install run the install scipt that is inside the Documents folder
 
-#### Remember to BACKUP YOUR FILES
+### Remember to BACKUP YOUR FILES
 
 ### Install git
 ```
