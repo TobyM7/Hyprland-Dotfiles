@@ -1,7 +1,7 @@
-#Hello👋
-Feel free to explore and incorporate what you like into your own configs (If anything). 
-If you have any questions, comments or suggestions, open an issue or PR!
+##Hello👋
+Feel free to explore and incorporate what you like into your own configs (If anything). If you have any questions, comments or suggestions, open an issue or PR!
 ![Screenshot](https://github.com/TobyM7/Hyprland-Dotfiles/blob/main/Documents/screenshot.png)
+Staring:
 - **Window Manager** • [Hyprland](https://github.com/hyprwm/Hyprland)
 - **Shell** • [Bash](https://www.gnu.org/software/bash/) with
   [ble.sh](https://github.com/akinomyoga/ble.sh)
@@ -11,23 +11,26 @@ If you have any questions, comments or suggestions, open an issue or PR!
 - **Launcher** • [Rofi](https://github.com/davatorium/rofi) 
 - **File Manager** • [Thunar](https://wiki.archlinux.org/title/Thunar)
 
-### Installation
-**Important**: Run this command inside the Hyprland-Dotfiles folder
+## Installation
+####Run this command inside the Hyprland-Dotfiles folder
 
 To install run the install scipt that is inside the Documents folder
-**Important**: Remember to BACKUP YOUR FILES
 
-Install git
+####Remember to BACKUP YOUR FILES
+
+###Install git
 ```
 sudo pacman -S git 
 git clone https://github.com/TobyM7/Hyprland-Dotfiles.git
 ```
-
+###Running the Script
 ```
 cd Hyprland-Dotfiles 
 chmod +x Documents/install
 Documents/install
 ```
+##Post installation
+To set theme, icons etc open GTK settings using the run menu (SUPER+O)
 
 ## Key Bindings
 You Can press super F1 to see a list of all keybindings
