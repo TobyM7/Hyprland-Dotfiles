@@ -10,7 +10,7 @@ LOG="script.log"
 # exit on error
 set -e
 
-printf "$(tput setaf 2) Welcome to the my Hyrpland Dotfile installer!\n $(tput sgr0)"
+printf "$(tput setaf 2) Welcome to my Hyrpland Dotfile installer!\n $(tput sgr0)"
 
 sleep 2
 
@@ -21,7 +21,7 @@ sleep 2
 
 printf "\n
 $YELLOW  This script will require a password
-If you don't want to  enter your password, you can exit now using  CTRL Q or CTRL C \n"
+If you don't want to enter your password, you can exit now using  CTRL Q or CTRL C \n"
 
 sleep 3
 
@@ -74,7 +74,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
    font_pkgs2="ttf-material-design-icons-extended ttf-jetbrains-mono-nerd ttf-icomoon-feather ttf-iosevka-nerd adobe-source-code-pro-fonts"
    app_pkgs="nwg-look-bin qt5ct btop jq gvfs ffmpegthumbs swww playerctl pamixer noise-suppression-for-voice"
    app_pkgs2="polkit-gnome ffmpeg  pavucontrol ffmpegthumbnailer tumbler xdg-user-dirs bc blueberry boost brave-bin checkupdates-with-aur etcher-bin feh file-roller fuse2 fzf gdu libqalculate light lolcat lsd lxqt-archiver man-db micro neofetch network-manager-applet networkmanager nlohmann-json openrgb plasma-browser-integration pulseaudio python-pipx python-requests qt5-graphicaleffects qt5-quickcontrols2 ranger ripgrep socat sox timeshift transmission-gtk unzip wget xclip xorg-xkill"
-   theme_pkgs="nordic-theme catppuccin-cursors-mocha candy-icons-git"
+   theme_pkgs="nordic-theme catppuccin-cursors-mocha catppuccin-cursors-macchiato catppuccin-cursors-frappe catppuccin-cursors-latte  catppuccin-gtk-theme-mocha catppuccin-gtk-theme-latte catppuccin-gtk-theme-macchiato catppuccin-gtk-theme- candy-icons-git dracula-cursors-git dracula-gtk-theme dracula-icons-git"
 
     
 
@@ -88,7 +88,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
 
 else
     echo
-    print_error " Packages not installed - please check the scipt.log"
+    print_error " Packages not installed if you did not meant to do this - please check the scipt.log"
     sleep 1
 fi
 
@@ -110,13 +110,13 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     cp -r .config/micro ~/.config/ 2>&1 | tee -a $LOG   
     cp -r .bashrc ~/ 2>&1 | tee -a $LOG
     cp -r .local/ ~/.local/ 2>&1 | tee -a $LOG
-    cp -r Documents/bin/*  ~/Documents 2>&1 | tee -a $LOG
+    cp -r Documents/bin/  ~/Documents/ 2>&1 | tee -a $LOG
     
     # Set some files as exacutable 
-    chmod +x ~/Documents/launch
-    chmod +x ~/Documents/nightly.sh
-    chmod +x ~/Documents/record-script-fullscreen.sh
-    chmod +x ~/Documents/record-script.sh
+    chmod +x ~/Documents/bin/launch
+    chmod +x ~/Documents/bin/nightly.sh
+    chmod +x ~/Documents/bin/record-script-fullscreen.sh
+    chmod +x ~/Documents/bin/record-script.sh
 fi
 fc-cache -rv  
 
