@@ -3,7 +3,7 @@ case $- in
 	*) return;;
 esac
 
-for file in /home/toby/.config/bash/.{bash_prompt,exports,aliases,functions}; do
+for file in $HOME/.config/bash/.{bash_prompt,exports,aliases,functions}; do
     [ -r "$file" ] && source "$file"
 done
 unset file

@@ -57,8 +57,7 @@ feh
 file-roller 
 fuse2 
 fzf 
-gdu 
-intel-ucode 
+gdu
 libqalculate 
 light 
 lolcat 

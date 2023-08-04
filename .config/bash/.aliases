@@ -58,7 +58,7 @@ up () {
 alias config='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles/ --work-tree=$HOME' 
 alias sr='shutdown -r now'
 alias st='shutdown -h now'
-alias bs='source /home/toby/.bashrc'
+alias bs='source $HOME/.bashrc'
 alias s='sudo'
 alias t='top'
 alias l='ls'

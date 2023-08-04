@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-[ -n "$PS1" ] && source /home/toby/.config/bash/.bash_profile
+[ -n "$PS1" ] && source $HOME/.config/bash/.bash_profile
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

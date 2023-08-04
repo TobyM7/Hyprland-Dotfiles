@@ -8,7 +8,7 @@
 ## Available Styles
 #
 ## style-1     style-2     style-3     style-4     style-5
-folder_path="/home/toby/.config/rofi/launchers/type-5/"  # Replace with the desired folder path
+folder_path="$HOME/.config/rofi/launchers/type-5/"  # Replace with the desired folder path
 
 # Count the number of files with the .rasi extension
 file_count=$(find "$folder_path" -type f -name "style*.rasi" | wc -l)
