@@ -14,7 +14,7 @@ printf "$(tput setaf 2) Welcome to the my Hyrpland Dotfile installer!\n $(tput s
 
 sleep 2
 
-printf "$RED BACKUP YOUR FILES
+printf "$YELLOW BACKUP YOUR FILES
 This script may replace some configs and files!"
 
 sleep 2
@@ -63,13 +63,13 @@ read -n1 -rep "${CAT} Would you like to install the packages? (y/n)" inst
 echo
 
 if [[ $inst =~ ^[Nn]$ ]]; then
-    printf "${YELLOW} No packages installed. Goodbye! \n"
-            exit 1
+    printf "${YELLOW} No packages installed. \n"
+            
         fi
 
 if [[ $inst =~ ^[Yy]$ ]]; then
    git_pkgs=" grimblast-git hyprpicker-git polkit-gnome ppfetch-git sddm-git sddm-theme-corners-git waybar-git"
-   hypr_pkgs="hyprland wl-clipboard wf-recorder rofi wlogout swaylock-effects dunst swww kitty swayidle thunar thunar-archive-plugin thunar-media-tags-plugin "    
+   hypr_pkgs="hyprland wl-clipboard wf-recorder rofi wlogout waybar-updates swaylock-effects dunst swww kitty swayidle thunar thunar-archive-plugin thunar-media-tags-plugin "    
    font_pkgs="ttf-nerd-fonts-symbols-common otf-firamono-nerd inter-font otf-sora ttf-fantasque-nerd noto-fonts noto-fonts-emoji ttf-comfortaa"
    font_pkgs2="ttf-material-design-icons-extended ttf-jetbrains-mono-nerd ttf-icomoon-feather ttf-iosevka-nerd adobe-source-code-pro-fonts"
    app_pkgs="nwg-look-bin qt5ct btop jq gvfs ffmpegthumbs swww playerctl pamixer noise-suppression-for-voice"
@@ -109,10 +109,8 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     cp -r .config/btop ~/.config/ 2>&1 | tee -a $LOG
     cp -r .config/micro ~/.config/ 2>&1 | tee -a $LOG   
     cp -r .bashrc ~/ 2>&1 | tee -a $LOG
-    cp -r .local/icons ~/.local/ 2>&1 | tee -a $LOG
-    cp -r .local/share/fonts ~/.local/ 2>&1 | tee -a $LOG
-    cp -r .local/share/icons ~/.local/ 2>&1 | tee -a $LOG
-    cp -r Documents/bin/  ~/Documents 2>&1 | tee -a $LOG
+    cp -r .local/ ~/.local/ 2>&1 | tee -a $LOG
+    cp -r Documents/bin/*  ~/Documents 2>&1 | tee -a $LOG
     
     # Set some files as exacutable 
     chmod +x ~/Documents/launch
@@ -120,15 +118,6 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     chmod +x ~/Documents/record-script-fullscreen.sh
     chmod +x ~/Documents/record-script.sh
 fi
-
-### Add Fonts for Waybar ###
-#mkdir -p $HOME/Downloads/nerdfonts/
-#cd $HOME/Downloads/
-#wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/CascadiaCode.zip
-#unzip '*.zip' -d $HOME/Downloads/nerdfonts/
-#rm -rf *.zip
-#sudo cp -R $HOME/Downloads/nerdfonts/ /usr/share/fonts/
-
 fc-cache -rv  
 
 ### Enable SDDM Autologin ###
@@ -140,6 +129,27 @@ if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
     echo -e "\n"
     echo -e "Enabling SDDM service...\n"
     sudo systemctl enable sddm
+    sleep 3
+fi
+
+### Enable SDDM Autologin ###
+read -n1 -rep 'Would you like to enable SDDM and set the theme? (y,n)' SDDM
+if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
+    LOC="/etc/sddm.conf"
+    echo -e "The following has been added to $LOC.\n"
+    echo -e "[Theme]\nThemeDir=/usr/share/sddm/themes \nCurrent=corners" | sudo tee -a $LOC
+    echo -e "\n"
+    echo -e "Enabling SDDM service...\n"
+    sudo systemctl enable sddm
+    sleep 3
+fi
+
+### Enable BLE ###
+read -n1 -rep 'Would you like to install ble.sh? (y,n)' BLE
+if [[ $BLE == "Y" || $BLE == "y" ]]; then
+    echo -e "Installing ble.sh.\n"
+    git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+    make -C ble.sh install PREFIX=~/.local
     sleep 3
 fi
 
