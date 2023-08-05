@@ -56,6 +56,7 @@ up () {
   fi
 }
 alias config='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles/ --work-tree=$HOME' 
+alias ping='gping' 
 alias sr='shutdown -r now'
 alias st='shutdown -h now'
 alias bs='source $HOME/.bashrc'
@@ -66,7 +67,7 @@ alias k='sudo killall'
 alias i='sudo pacman -S'
 alias e='micro'
 alias r='sudo pacman -Rsu'
-alias u='yay && sudo pacman -Syu '
+alias u='yay '
 alias nautilus='GTK_THEME=Adwaita:dark nautilus'
 alias nano='micro'
 alias pcin='sudo pacman -S'
@@ -113,12 +114,9 @@ command -v lsd > /dev/null && alias ls=' lsd -A  --group-dirs first' && \
 
 ### CAT & LESS
 
-	
-# in debian the command is batcat
-command -v batcat > /dev/null && \
-	alias batcat='bat --theme=ansi' && \
-	alias cat='bat --pager=never' && \
-	alias less='bat'
+alias batcat='bat --theme=ansi' && \
+alias cat='bat --pager=never' && \
+alias less='bat'
 
 ### TOP
 # themes for light/dark color-schemes inside ~/.config/bashtop; Press ESC to open the menu and change the theme

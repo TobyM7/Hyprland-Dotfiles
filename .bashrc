@@ -10,3 +10,5 @@
 
 source ~/.local/share/blesh/ble.sh
 #eval "$(starship init bash)"
+
+

@@ -52,11 +52,15 @@ export HISTTIMEFORMAT='%F %T '
 
 # keep history up to date, across sessions, in realtime
 #  http://unix.stackexchange.com/a/48113
-export HISTCONTROL="ignoredups"       # no duplicate entries, but keep space-prefixed commands
-export HISTSIZE=100000                          # big big history (default is 500)
+export HISTCONTROL="ignoredups ignorespace "       # no duplicate entries, but keep space-prefixed commands
+export HISTSIZE=100000                         # big big history (default is 500)
 export HISTFILESIZE=$HISTSIZE        
 export HISTFILE=~/.bash_history
+export HSTR_CONFIG=keywords-matching,hicolor,debug
 export LESSHISTFILE=-
+if [[ $- =~ .*i.* ]]; then bind -x '"\C-r": "hstrnotiocsti"'; fi
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+export HSTR_TIOCSTI=n
 type shopt &> /dev/null && shopt -s histappend  # append to history, don't overwrite it
 
 # Don't record some commands

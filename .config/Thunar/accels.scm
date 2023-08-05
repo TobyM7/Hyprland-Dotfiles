@@ -1,11 +1,10 @@
 ; thunar GtkAccelMap rc-file         -*- scheme -*-
 ; this file is an automated accelerator map dump
 ;
-; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-dtime" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/restore" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/undo" "<Primary>z")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/select-all-files" "<Primary>a")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/53807552a5fabf097c9ef0aaf2bfb486" "")
+; (gtk_accel_path "<Actions>/ThunarStandardView/sort-by-dtime" "")
 ; (gtk_accel_path "<Actions>/ThunarStatusBar/toggle-last-modified" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "")
 ; (gtk_accel_path "<Actions>/ThunarStatusBar/toggle-display-name" "")
@@ -80,7 +79,6 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/preferences" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/switch-previous-tab" "<Primary>Page_Up")
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-in-alt1" "<Primary>plus")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/1065638b487b1f11500838852186818f" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/toggle-sort-order" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/open-in-new-window" "<Primary><Shift>o")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-configure-toolbar" "")

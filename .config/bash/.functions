@@ -47,7 +47,10 @@ log() {
 }
 
 
-
+function hstrnotiocsti {
+    { READLINE_LINE="$( { </dev/tty hstr ${READLINE_LINE}; } 2>&1 1>&3 3>&- )"; } 3>&1;
+    READLINE_POINT=${#READLINE_LINE}
+}
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
 	local port="${1:-8011}"

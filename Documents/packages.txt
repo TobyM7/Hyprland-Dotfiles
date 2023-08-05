@@ -101,3 +101,6 @@ candy-icons-git
 dracula-cursors-git 
 dracula-gtk-theme 
 dracula-icons-git
+hstr
+bat
+gping

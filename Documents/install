@@ -72,8 +72,8 @@ if [[ $inst =~ ^[Yy]$ ]]; then
    hypr_pkgs="hyprland wl-clipboard wf-recorder rofi wlogout waybar-updates swaylock-effects dunst swww kitty swayidle thunar thunar-archive-plugin thunar-media-tags-plugin "    
    font_pkgs="ttf-nerd-fonts-symbols-common otf-firamono-nerd inter-font otf-sora ttf-fantasque-nerd noto-fonts noto-fonts-emoji ttf-comfortaa"
    font_pkgs2="ttf-material-design-icons-extended ttf-jetbrains-mono-nerd ttf-icomoon-feather ttf-iosevka-nerd adobe-source-code-pro-fonts"
-   app_pkgs="nwg-look-bin qt5ct btop jq gvfs ffmpegthumbs swww playerctl pamixer noise-suppression-for-voice"
-   app_pkgs2="polkit-gnome ffmpeg  pavucontrol ffmpegthumbnailer tumbler xdg-user-dirs bc blueberry boost brave-bin checkupdates-with-aur etcher-bin feh file-roller fuse2 fzf gdu libqalculate light lolcat lsd lxqt-archiver man-db micro neofetch network-manager-applet networkmanager nlohmann-json openrgb plasma-browser-integration pulseaudio python-pipx python-requests qt5-graphicaleffects qt5-quickcontrols2 ranger ripgrep socat sox timeshift transmission-gtk unzip wget xclip xorg-xkill"
+   app_pkgs="nwg-look-bin hstr qt5ct btop jq gvfs ffmpegthumbs swww playerctl pamixer noise-suppression-for-voice"
+   app_pkgs2="gping bat polkit-gnome ffmpeg  pavucontrol ffmpegthumbnailer tumbler xdg-user-dirs bc blueberry boost brave-bin checkupdates-with-aur etcher-bin feh file-roller fuse2 fzf gdu libqalculate light lolcat lsd lxqt-archiver man-db micro neofetch network-manager-applet networkmanager nlohmann-json openrgb plasma-browser-integration pulseaudio python-pipx python-requests qt5-graphicaleffects qt5-quickcontrols2 ranger ripgrep socat sox timeshift transmission-gtk unzip wget xclip xorg-xkill"
    theme_pkgs="nordic-theme catppuccin-cursors-mocha catppuccin-cursors-macchiato catppuccin-cursors-frappe catppuccin-cursors-latte  catppuccin-gtk-theme-mocha catppuccin-gtk-theme-latte catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-frappe candy-icons-git dracula-cursors-git dracula-gtk-theme dracula-icons-git"
 
     
