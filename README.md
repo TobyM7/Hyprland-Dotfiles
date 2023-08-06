@@ -33,7 +33,7 @@ Documents/install
 To set theme, icons etc open GTK settings using the run menu (SUPER+O)
 
 ## Key Bindings
-You Can press super F1 to see a list of all keybindings
+You can press super F1 to see a list of all keybindings
 But these are some of the main ones
 - `SUPER+SHIFT+ENTER`: Open terminal(Kitty)
 - `SUPER+1,...9,0`:   Switch workspace
