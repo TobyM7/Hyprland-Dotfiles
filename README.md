@@ -45,12 +45,14 @@ But these are some of the main ones
 - `SUPER+T`: Thunar
 - `SUPER+O`: Run Menu
 - `SUPER+B`: Brave
-- `SUPER+E`: Edge web browser (Yuck I know. Not installed by default but I need for school )
 - `SUPER+W`: Changes Wallpaper (Stored in ~/.config/hypr/wallpapers/)
 ## Roadmap
 
 - [ ] Make the installation script install video drivers and backup configs
-
+- [ ] Add seprate modules to install wallpapers to speed up clone time
+- [ ] Add option for gBar or waybar in install 
+- [ ] Convert README to org
+- [ ] Update README to show new configs
 
 ## References and Credits
 
