@@ -1,0 +1,10 @@
+ls
+lsd
+lsd -a
+ls 
+ls
+up 3
+ls 
+lsd -laf
+lsd -la
+ll
