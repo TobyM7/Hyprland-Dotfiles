@@ -55,6 +55,7 @@ up () {
     echo "Couldn't go up $limit dirs.";
   fi
 }
+alias y="xclip $HOME/Documents/github.txt"
 alias em="/usr/bin/emacs"
 alias emacs="emacsclient -c -a 'emacs'"
 alias rem="killall emacs || echo 'Emacs server not running'; /usr/bin/emacs --daemon"
@@ -92,7 +93,6 @@ alias cp='cp -vi'
 alias rm='rm -I'
 alias mv='mv -iv'
 alias ln='ln -sriv'
-alias xclip='xclip -selection c'
 command -v vim > /dev/null && alias vi='vim'
 alias aptupd='sudo apt update'
 alias aptupg='sudo apt upgrade'
