@@ -1,1 +1,0 @@
-(eshell/alias "ls" "lsd -A  --group-dirs first")
