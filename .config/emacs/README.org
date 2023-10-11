@@ -1,0 +1,6 @@
+#+title My Emacs Config
+#+author TobyM7
+* Instalation
+#+begin_src shell
+git clone --recursive https://github.com/TobyM7/Emacs-Config.git ~/.config/emacs
+#+end_src
