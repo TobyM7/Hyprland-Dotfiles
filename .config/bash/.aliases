@@ -57,7 +57,7 @@ up () {
 }
 alias cr='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$HOME remove'
 alias ca='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$HOME add'
-alias cp='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$HOME push'
+alias cps='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$HOME push --set-upstream origin main'
 alias cc='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$HOME commit'
 alias cs='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$HOME status'
 alias gr="git remove"
@@ -95,7 +95,6 @@ alias yup='yay -Syu'
 alias ysh='yay -Ss'
 alias yrm='yay -Rsu'
 alias dl="cd ~/Downloads"
-alias cc="cd ~/.config"
 alias chmox='chmod +x'
 alias fs="stat -f \"%z bytes\""
 alias mkdir='mkdir -pv'
