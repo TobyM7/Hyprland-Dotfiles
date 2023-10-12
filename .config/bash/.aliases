@@ -63,7 +63,7 @@ alias cs='/usr/bin/git --git-dir=$HOME/Documents/Hyprland-Dotfiles --work-tree=$
 alias gr="git remove"
 alias ga="git add " 
 alias gp="git push" 
-alias gs="git staus" 
+alias gs="git status" 
 alias gc="git commit" 
 alias g="git" 
 alias y='xclip $HOME/Documents/github.txt'
