@@ -1,3 +1,12 @@
+#+TITLE: My literate hyprland config
+#+AUTHOR: TobyM7
+#+PROPERTY: header-args :tangle hyprland.conf
+#+STARTUP: showeverything
+#+OPTIONS: toc:2 
+#+auto_tangle: t
+
+* EXEC
+#+begin_src shell
 #/bin/bash
 exec-once = swww init
 exec-once = ~/.config/hypr/xdg-portal-hyprland
@@ -9,8 +18,13 @@ exec = swww img $(find /usr/share/wallpapers/ -type f | shuf -n1)
 exec-once = gBar bar  
 exec-once=swayidle -w before-sleep 'swaylock -f -c 000000'
 exec =/usr/bin/emacs --daemon
-
+#+end_src
+* MONITORS
+#+begin_src shell
 monitor=,preferred,auto,1
+#+end_src
+* INPUT
+#+begin_src shell
 
 input {
   kb_layout = gb
@@ -27,10 +41,18 @@ input {
    }
 }
 
+#+end_src
+* GESTURES
+#+begin_src shell
+
 gestures { 
   workspace_swipe=true 
   workspace_swipe_min_speed_to_force=5
 }
+
+#+end_src
+* GENERAL
+#+begin_src shell
 
 general {
   gaps_in=7.5
@@ -45,6 +67,9 @@ general {
  
 }
 
+#+end_src
+* MISC
+#+begin_src shell
 misc {
   disable_hyprland_logo = true
   disable_splash_rendering = true
@@ -55,19 +80,30 @@ misc {
   hide_cursor_on_touch = true
 }
 
+#+end_src
+* DECORATION
+** Round Corners
+#+begin_src shell
 decoration {
   rounding = 19
   multisample_edges = true
-
-active_opacity = 1.0
-inactive_opacity = 1.0
-
-drop_shadow=true
-shadow_range=30
-col.shadow=0xffa7caff #86AAEC
-col.shadow_inactive=0x50000000
-
-drop_shadow = true
+#+end_src
+** Opacity
+#+begin_src shell
+  active_opacity = 1.0
+  inactive_opacity = 1.0
+#+end_src
+** Blur
+#+begin_src shell
+  drop_shadow=true
+  shadow_range=30
+  col.shadow=0xffa7caff #86AAEC
+  col.shadow_inactive=0x50000000
+#+end_src
+** Shadow
+#+begin_src shell
+ 
+  drop_shadow = true
   shadow_ignore_window = true
   shadow_offset = 2 2
   shadow_range = 4
@@ -77,6 +113,9 @@ drop_shadow = true
   blurls = gtk-layer-shellsss
   blurls = lockscreen
 }
+#+end_src
+* ANIMATIONS
+#+begin_src shell
 
 animations {
   enabled = true
@@ -92,6 +131,9 @@ animations {
 
 }
 
+#+end_src
+* LAYOUTS
+#+begin_src shell
 dwindle {
   no_gaps_when_only = true
   pseudotile = true # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
@@ -105,6 +147,9 @@ master {
 
 }
 
+#+end_src
+* WINDOW RULES
+#+begin_src shell
 windowrule = float, file_progress
 windowrule = float, confirm
 windowrule = float, dialog
@@ -152,12 +197,18 @@ windowrule=opacity 0.88,obsidian
 ^.*nvim.*$
 bindm=SUPER,mouse:272,movewindow
 bindm=SUPER,mouse:273,resizewindow
-
+#+end_src
+* KEYBINDINGS
+** Screenshot
+#+begin_src shell
 $screenshotarea = hyprctl keyword animation "fadeOut,0,0,default"; grimblast --notify copysave area; hyprctl keyword animation "fadeOut,1,4,default"
 bind = SUPER SHIFT, S, exec, $screenshotarea
 bind = , Print, exec, grimblast --notify --cursor copysave output
 bind = ALT, Print, exec, grimblast --notify --cursor copysave screen
 
+#+end_src
+** Misc
+#+begin_src shell
 bind = SUPER, R, exec, gBar bar
 bind = SUPER SHIFT, R, exec,  killall gBar
 bind = SUPER, B, exec, brave 
@@ -170,8 +221,10 @@ bind = SUPER, T, exec, thunar
 bind = SUPER, M, exec, $HOME/Documents/bin/mac.sh 
 bind = SUPER, O, exec, ~/Documents/bin/launch
 bind = SUPER, escape, exec, wlogout --protocol layer-shell -b 5 -T 400 -B 400
-bind = SUPER, W, exec,  swww img $(find /usr/share/wallpapers/ -type f | shuf -n1) --transition-type wipe
-
+bind = SUPER, W, exec,  swww img $(find /usr/share/wallpapers/ -type f | shuf -n1) --transition-type wipe  
+#+end_src
+** Emacs
+#+begin_src shell
 bind=SUPER,E,submap,emacs
 submap=emacs
 
@@ -184,32 +237,50 @@ binde=,I,exec,emacsclient -c -a 'emacs' --eval '(ibuffer)'
 bind=,escape,submap,reset 
 
 submap=reset
-
+#+end_src
+** Window Managment
+#+begin_src shell
 bind = SUPER SHIFT, C, killactive,
 bind = SUPER SHIFT, Q, exit,
 bind = SUPER, F, fullscreen,
 bind = SUPER, Space, togglefloating,
 bind = SUPER, P, pseudo, # dwindle
 bind = SUPER, S, togglesplit, # dwindle
-
+#+end_src
+** Focus
+#+begin_src shell
 bind = SUPER, left, movefocus, l
 bind = SUPER, right, movefocus, r
 bind = SUPER, up, movefocus, u
 bind = SUPER, down, movefocus, d
 
+#+end_src
+** Move
+#+begin_src shell
 bind = SUPER SHIFT, left, movewindow, l
 bind = SUPER SHIFT, right, movewindow, r
 bind = SUPER SHIFT, up, movewindow, u
 bind = SUPER SHIFT, down, movewindow, d
-
+#+end_src
+** Resize
+#+begin_src shell
 bind = SUPER CTRL, left, resizeactive, -20 0
 bind = SUPER CTRL, right, resizeactive, 20 0
 bind = SUPER CTRL, up, resizeactive, 0 -20
 bind = SUPER CTRL, down, resizeactive, 0 20
-
+#+end_src
+** Tabbed
+#+begin_src 
 bind = SUPER, grave, togglespecialworkspace,
 bind = SUPERSHIFT, grave, movetoworkspace, special
-
+#+end_src
+** Special
+#+begin_src shell
+bind = SUPER, grave, togglespecialworkspace,
+bind = SUPERSHIFT, grave, movetoworkspace, special
+#+end_src
+** Switch
+#+begin_src shell
 bind = SUPER, 1, workspace, 1
 bind = SUPER, 2, workspace, 2
 bind = SUPER, 3, workspace, 3
@@ -223,6 +294,9 @@ bind = SUPER, 0, workspace, 10
 bind = SUPER ALT, left, workspace, e+1
 bind = SUPER ALT, right, workspace, e-1
 
+#+end_src
+** Move
+#+begin_src shell
 bind = SUPER SHIFT, 1, movetoworkspace, 1
 bind = SUPER SHIFT, 2, movetoworkspace, 2
 bind = SUPER SHIFT, 3, movetoworkspace, 3
@@ -233,8 +307,11 @@ bind = SUPER SHIFT, 7, movetoworkspace, 7
 bind = SUPER SHIFT, 8, movetoworkspace, 8
 bind = SUPER SHIFT, 9, movetoworkspace, 9
 bind = SUPER SHIFT, 0, movetoworkspace, 10
-
+#+end_src
+** Mouse Bindings
+#+begin_src shell
 bindm = SUPER, mouse:272, movewindow
 bindm = SUPER, mouse:273, resizewindow
 bind = SUPER, mouse_down, workspace, e+1
 bind = SUPER, mouse_up, workspace, e-1
+#+end_src
