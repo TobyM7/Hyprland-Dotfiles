@@ -5,6 +5,35 @@
 #+OPTIONS: toc:2 
 #+auto_tangle: t
 
+* TABLE OF CONTENTS :toc:
+- [[#exec][EXEC]]
+- [[#monitors][MONITORS]]
+- [[#input][INPUT]]
+- [[#gestures][GESTURES]]
+- [[#general][GENERAL]]
+- [[#misc][MISC]]
+- [[#decoration][DECORATION]]
+  - [[#round-corners][Round Corners]]
+  - [[#opacity][Opacity]]
+  - [[#blur][Blur]]
+  - [[#shadow][Shadow]]
+- [[#animations][ANIMATIONS]]
+- [[#layouts][LAYOUTS]]
+- [[#window-rules][WINDOW RULES]]
+- [[#keybindings][KEYBINDINGS]]
+  - [[#screenshot][Screenshot]]
+  - [[#misc-1][Misc]]
+  - [[#emacs][Emacs]]
+  - [[#window-managment][Window Managment]]
+  - [[#focus][Focus]]
+  - [[#move][Move]]
+  - [[#resize][Resize]]
+  - [[#tabbed][Tabbed]]
+  - [[#special][Special]]
+  - [[#switch][Switch]]
+  - [[#move-1][Move]]
+  - [[#mouse-bindings][Mouse Bindings]]
+
 * EXEC
 #+begin_src shell
 #/bin/bash
