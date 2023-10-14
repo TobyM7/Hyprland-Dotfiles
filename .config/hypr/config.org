@@ -141,6 +141,7 @@ decoration {
   blurls = gBar
   blurls = gtk-layer-shellsss
   blurls = lockscreen
+  blurls = emacs
 }
 #+end_src
 * ANIMATIONS
