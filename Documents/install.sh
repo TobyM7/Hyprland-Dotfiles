@@ -298,10 +298,13 @@ fi
 #clear screen
 clear 
 
-# installation of other components needed
+
+
+read -n1 -rep 'Would like to install  packages (y,n)' PAK
+if [[ $PAK == "Y" || $PAK == "y" ]]; then
 printf "\n%s - Installing other necessary packages.... \n" "${NOTE}"
 
-for PKG1 in acpid adobe-source-code-pro-fonts asciiquarium bashtop bat bc boost brave-bin btop candy-icons-git catppuccin-cursors-frappe catppuccin-cursors-latte catppuccin-cursors-macchiato catppuccin-cursors-mocha catppuccin-cursors-mocha catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-mocha ccls checkupdates-with-aur classicube-git cpufetch dashbinsh dialog direnv dmenu dosfstools dracula-cursors-git dracula-gtk-theme dracula-icons-git dunst efibootmgr emacs etcher-bin fail2ban fd feh ffmpeg ffmpegthumbnailer ffmpegthumbs figlet file-roller fuse2 fzf gbar-git gdu git gparted gping grimblast-git gtklock gvfs hstr hyprland hyprpicker-git intel-ucode inter-font iwd jq kdialog keepassxc kitty libqalculate light lolcat lsd lxappearance lxqt-archiver ly macchanger man-db mpv muc-git neofetch neovim net-tools network-manager-applet networkmanager nordic-theme noto-fonts noto-fonts-emoji nsh-git nwg-look-bin openrgb otf-firamono-nerd otf-sora pamixer papirus-icon-theme pavucontrol playerctl plymouth plymouth-theme-dragon-git polkit-gnome polybar-git ppfetch-git pulseaudio python-pipx python-requests qt5-graphicaleffects qt5-quickcontrols2 qt5ct ranger ripgrep riseup-vpn rofi sddm-git sddm-theme-corners-git socat sox swaybg swayidle swaylock-effects swww thunar thunar-archive-plugin thunar-media-tags-plugin timeshift tor transmission-gtk ttf-comfortaa ttf-fantasque-nerd ttf-font-awesome ttf-icomoon-feather ttf-iosevka-nerd ttf-jetbrains-mono-nerd ttf-material-design-icons-extended ttf-nerd-fonts-symbols-common tumbler ufw unzip waybar waybar-updates wf-recorder wget wl-clipboard wlogout xclip xorg-xkill zenity zram-generator; do
+for PKG1 in acpid adobe-source-code-pro-fonts asciiquarium bashtop bat bc boost brave-bin btop candy-icons-git catppuccin-cursors-frappe catppuccin-cursors-latte catppuccin-cursors-macchiato catppuccin-cursors-mocha catppuccin-cursors-mocha catppuccin-gtk-theme-frappe catppuccin-gtk-theme-latte catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-mocha ccls checkupdates-with-aur classicube-git cpufetch dashbinsh dialog direnv dmenu dosfstools dracula-cursors-git dracula-gtk-theme dracula-icons-git dunst efibootmgr emacs etcher-bin fail2ban fd feh ffmpeg ffmpegthumbnailer ffmpegthumbs figlet file-roller fuse2 fzf gbar-git gdu git gparted gping grimblast-git gtklock gvfs hstr hyprland hyprpicker-git intel-ucode inter-font iwd jq kdialog keepassxc kitty libqalculate light lolcat lsd lxappearance lxqt-archiver ly macchanger man-db mpv muc-git neofetch neovim net-tools network-manager-applet networkmanager nordic-theme noto-fonts noto-fonts-emoji nsh-git nwg-look-bin openrgb otf-firamono-nerd otf-sora pamixer papirus-icon-theme pavucontrol playerctl plymouth plymouth-theme-dragon-git polkit-gnome ppfetch-git pulseaudio python-pipx python-requests qt5-graphicaleffects qt5-quickcontrols2 qt5ct ranger ripgrep riseup-vpn rofi sddm-git sddm-theme-corners-git socat sox swaybg swayidle swaylock-effects swww thunar thunar-archive-plugin thunar-media-tags-plugin timeshift tor transmission-gtk ttf-comfortaa ttf-fantasque-nerd ttf-font-awesome ttf-icomoon-feather ttf-iosevka-nerd ttf-jetbrains-mono-nerd ttf-material-design-icons-extended ttf-nerd-fonts-symbols-common tumbler ufw unzip waybar waybar-updates wf-recorder wget wl-clipboard wlogout xclip xorg-xkill zenity zram-generator; do
     install_package "$PKG1" 2>&1 | tee -a "$LOG"
     if [ $? -ne 0 ]; then
         echo -e "\e[1A\e[K${ERROR} - $PKG1 install had failed, please check the install.log"
@@ -313,7 +316,7 @@ done
 echo
 print_success "All necessary packages installed successfully."
 sleep 2
-
+fi
 #clear screen
 clear
 
@@ -401,80 +404,15 @@ fi
 clear
 
 
-# Function to detect keyboard layout in a tty environment
-detect_tty_layout() {
-  layout=$(localectl status --no-pager | awk '/X11 Layout/ {print $3}')
-  if [ -n "$layout" ]; then
-    echo "$layout"
-  else
-    echo "unknown"
-  fi
-}
-
-# preparing hyprland.conf keyboard layout
-# Function to detect keyboard layout in an X server environment
-detect_x_layout() {
-  layout=$(setxkbmap -query | grep layout | awk '{print $2}')
-  if [ -n "$layout" ]; then
-    echo "$layout"
-  else
-    echo "unknown"
-  fi
-}
-
-# Detect the current keyboard layout based on the environment
-if [ -n "$DISPLAY" ]; then
-  # System is in an X server environment
-  layout=$(detect_x_layout)
-else
-  # System is in a tty environment
-  layout=$(detect_tty_layout)
-fi
-
-echo "Keyboard layout: $layout"
-
-printf "${NOTE} Detecting keyboard layout to prepare necessary changes in hyprland.conf before copying\n"
-printf "\n"
-printf "\n"
-
-# Prompt the user to confirm whether the detected layout is correct
-read -p "Detected keyboard layout or keymap: $layout. Is this correct? [y/n] " confirm
-
-if [ "$confirm" = "y" ]; then
-  # If the detected layout is correct, update the 'kb_layout=' line in the file
-  awk -v layout="$layout" '/kb_layout/ {$0 = "  kb_layout=" layout} 1' config/hypr/hyprland.conf > temp.conf
-  mv temp.conf config/hypr/hyprland.conf
-else
-  # If the detected layout is not correct, prompt the user to enter the correct layout
-  printf "${WARN} Ensure to type in the proper keyboard layout, e.g., gb, de, pl, etc.\n"
-  read -p "Please enter the correct keyboard layout: " new_layout
-  # Update the 'kb_layout=' line with the correct layout in the file
-  awk -v new_layout="$new_layout" '/kb_layout/ {$0 = "  kb_layout=" new_layout} 1' config/hypr/hyprland.conf > temp.conf
-  mv temp.conf config/hypr/hyprland.conf
-fi
-printf "\n"
-printf "\n"
-
 ### Copy Config Files ###
 set -e # Exit immediately if a command exits with a non-zero status.
 
 read -n1 -rep "${CAT} Would you like to copy files? (y,n)" CFG
 if [[ $CFG =~ ^[Yy]$ ]]; then
     printf " Copying config files...\n"
-   #cp -r .config/dunst ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/hypr ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/kitty ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/Thunar ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/rofi ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/swaylock ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/waybar ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/wlogout ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/bash ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/btop ~/.config/ 2>&1 | tee -a $LOG
-   #cp -r .config/gBar ~/.config/ 2>&1 | tee -a $LOG
    cp -r .config/* ~/.config/ 2>&1 | tee -a $LOG
    cp -r .bashrc ~/ 2>&1 | tee -a $LOG
-   cp -r Documents/bin/  ~/Documents/ 2>&1 | tee -a $LOG
+   cp -r Documents/bin/  ~/Documents/bin/ 2>&1 | tee -a $LOG
     
     # Set some files as exacutable 
     chmod +x ~/Documents/bin/*    
@@ -523,7 +461,7 @@ fi
 read -n1 -rep 'Would like to install my wallpapers (y,n)' WALL
 if [[ $WALL == "Y" || $WALL == "y" ]]; then
     echo -e "Installing emacs config\n"
-git clone https://github.com/TobyM7/wallpapers.git /usr/share/wallpapers/
+sudo git clone https://github.com/TobyM7/wallpapers.git /usr/share/wallpapers/
 fi
 
 #clear screen
