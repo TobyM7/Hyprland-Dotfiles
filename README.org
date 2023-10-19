@@ -1,4 +1,3 @@
-#+TITLE: README.org 
 #+AUTHOR: TobyM7
 #+STARTUP: showeverything
 * HELLO👋
