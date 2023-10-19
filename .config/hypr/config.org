@@ -199,34 +199,16 @@ windowrule = float, pavucontrol-qt
 windowrule = float, pavucontrol
 windowrule = float, file-roller
 windowrule = fullscreen, wlogoutq
-windowrule = float, title:wlogout
 windowrule = fullscreen, title:wlogout
-windowrule = idleinhibit focus, mpv
-windowrule = idleinhibit fullscreen, firefox
-windowrule = idleinhibit fullscreen, msedge
-windowrule = idleinhibit fullscreen, brave
-windowrule = float, title:^(Media viewer)$
-windowrule = float, title:^(Volume Control)$
-windowrule = float, title:^(Picture-in-Picture)$
-windowrule = size 800 600, title:^(Volume Control)$
-windowrule = move 75 44%, title:^(Volume Control)$
 windowrulev2 = float,class:^(brave)$,title:^(Save File)$
 windowrulev2 = float,class:^(brave)$,title:^(Open File)$
-windowrulev2 = float,class:^(firefox)$,title:^(Picture-in-Picture)$
-windowrulev2 = float,class:^(blueman-manager)$
-windowrulev2 = float,class:^(org.twosheds.iwgtk)$
-windowrulev2 = float,class:^(blueberry.py)$
-windowrulev2 = float,class:^(xdg-desktop-portal-gtk)$
-windowrulev2 = float,class:^(geeqie)$
-# Increase the opacity 
-windowrule=opacity 0.92,Thunar
-windowrule=opacity 0.96,discord
-windowrule=opacity 0.9,VSCodium
-windowrule=opacity 0.88,obsidian
-
-^.*nvim.*$
-bindm=SUPER,mouse:272,movewindow
-bindm=SUPER,mouse:273,resizewindow
+windowrule = fullscreen, Brave-browser
+windowrule = workspace 2, Brave-browser
+windowrule = fullscreen, Emacs 
+windowrule = workspace 1, Emacs
+windowrule = float , riseup-vpn 
+windowrule = workspace 3,riseup-vpn
+windowrule = workspace 3, org.keepassxc.KeePassXC
 #+end_src
 * KEYBINDINGS
 ** Screenshot
@@ -249,6 +231,8 @@ bind = SUPER, T, exec, thunar
 bind = SUPER, O, exec, ~/Documents/bin/launch
 bind = SUPER, escape, exec, wlogout --protocol layer-shell -b 5 -T 400 -B 400
 bind = SUPER, W, exec,  swww img $(find /usr/share/wallpapers/ -type f | shuf -n1) --transition-type wipe  
+bindm=SUPER,mouse:272,movewindow
+bindm=SUPER,mouse:273,resizewindow
 #+end_src
 ** Emacs
 #+begin_src shell
