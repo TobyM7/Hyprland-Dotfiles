@@ -15,22 +15,73 @@
 
 * HELLO👋
 Feel free to explore and incorporate what you like into your own configs. If you have any questions, comments or suggestions, open an issue or PR!
+file:Documents/desktop.png 
 ** Staring:
-Window manager ->  [[https://github.com/hyprwm/Hyprland][hyprland]]
- Shell ->  [[https://github.com/akinomyoga/ble.sh][ble.sh]] [[https://www.gnu.org/software/bash/][bash]]
- ->  [[https://sw.kovidgoyal.net/kitty/][kitty]]
- ->  [[https://github.com/Alexays/Waybar][waybar]]
- ->  [[https://github.com/scorpion-26/gBar][gBar]]
- ->  [[https://github.com/dunst-project/dunst][dunst]]
- ->  [[https://github.com/davatorium/rofi][rofi]]
- ->  [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]]
- ->  [[https://wiki.archlinux.org/title/Thunar][thunar]]
- ->  [[https://www.gnu.org/software/emacs/][emacs]]
- ->  [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][eshell]]
+ -  Window Manager ->  [[https://github.com/hyprwm/Hyprland][hyprland]]
+ -  Shell ->  [[https://www.gnu.org/software/bash/][bash with ]][[https://github.com/akinomyoga/ble.sh][ble.sh]] 
+ -  Terminal ->  [[https://sw.kovidgoyal.net/kitty/][kitty]] & [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][eshell]]
+ -  Bar ->  [[https://github.com/Alexays/Waybar][waybar]] & [[https://github.com/scorpion-26/gBar][gBar]]
+ -  Notify Daemon ->  [[https://github.com/dunst-project/dunst][dunst]]
+ -  Launcher ->  [[https://github.com/davatorium/rofi][rofi]]
+ -  File Manager ->  [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]] & [[https://wiki.archlinux.org/title/Thunar][thunar]]
+ -  Text Editor ->  [[https://www.gnu.org/software/emacs/][emacs]]
 * INSTALL
 ** Install git 
+#+begin_src shell
+sudo pacman -Syu git
+#+end_src
+Remeber to backup your files
+The Script must be run from from the base of the repo as shown below
 ** Running the script
+#+begin_src shell
+git clone https://github.com/TobyM7/Hyprland-Dotfiles.git
+cd Hyprland-Dotfiles 
+chmod +x Documents/install
+Documents/install
+#+end_src
+The install script will ask if you want install my emacs and wallpaper configs 
+Some keybindings will not work if don't install them
+These include:
+- The emacs submap group
+- The change wallpaper command
+- There will be no wallpaper at start up
 * POST-INSTALL
+To set theme, icons etc open GTK settings using the run menu (SUPER+O)
+You may wish to use waybar as a bar instead of gBar but waybar had a broken dependancy a while back and now I have switched, but, my configs are still there.
+
+To run:
+#+begin_src shell
+sudo pacman -S waybar 
+#+end_src  
+Then you will have to edit the Hyprland config to start waybar at start up. This is in the top few lines you may also want to change the keybindings to mean that you can reload waybar instead of gBar. (A find and relpace would fix both of thes problems)
+
 * BINDINGS
+All bindings can be found in the hyprland.org file in ~/.config/hypr/hyprland.org
+If you want help with bindings run keybind_help and type what you want to do
+- SUPER+SHIFT+ENTER: Open terminal
+- SUPER+1,...9,0:   Switch workspace
+- SUPER+SHIFT+1,...9,0: Move to workspace
+- SUPER+[Arrow key]: Change focus
+- SUPER+SHIFT+[Arrow key]: Swap windows
+- SUPER+CTRL+[Arrow key]: Resize
+- SUPER+SHIFT+C: Kill active Window
+- SUPER+SHIFT+Q: Quit Hyprland
+- SUPER+SHIFT+P: Power menu
+- SUPER+SHIFT+F: FullScreen
+- SUPER+T: Thunar
+- SUPER+O: Run Menu
+- SUPER+B: Brave
+- SUPER+W: Changes Wallpaper (Stored in /usr/share/wallpapers/)
 * ROADMAP
+- [X] Make the installation script install nivida
+- [X] Add seprate modules to install wallpapers to speed up clone time
+- [X] Add option for gBar or waybar 
+- [X] Convert README to org
+- [X] Update README to show new configs
 * CREDITS
+- Official [[https://github.com/hyprwm/Hyprland][Hyprland]] GitHub
+- adi1090x for the [[https://github.com/adi1090x/rofi][rofi]] launchers (Which I randomized, some work better than others) 
+- 1amSimp1e for the [[https://github.com/1amSimp1e/dots/tree/balcony%F0%9F%9A%8A][waybar]] which I edited
+- JaKooLit for the [[https://github.com/JaKooLit/Hyprland-v3/blob/main/install-hyprland-v3][install script]] which I changed (I hope the nivida bit works as I have intel)
+
+
