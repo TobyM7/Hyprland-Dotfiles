@@ -1,18 +1,6 @@
 #+TITLE: README.org 
 #+AUTHOR: TobyM7
 #+STARTUP: showeverything
-#+OPTIONS: toc:2
-* TABLE OF CONTENTS :toc:
-- [[#hello][HELLO👋]]
-  - [[#staring][Staring:]]
-- [[#install][INSTALL]]
-  - [[#install-git][Install git]]
-  - [[#running-the-script][Running the script]]
-- [[#post-install][POST-INSTALL]]
-- [[#bindings][BINDINGS]]
-- [[#roadmap][ROADMAP]]
-- [[#credits][CREDITS]]
-
 * HELLO👋
 Feel free to explore and incorporate what you like into your own configs. If you have any questions, comments or suggestions, open an issue or PR!
 file:Documents/desktop.png 
