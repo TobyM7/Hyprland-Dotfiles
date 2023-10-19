@@ -1,0 +1,36 @@
+#+TITLE: README.org 
+#+AUTHOR: TobyM7
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+* TABLE OF CONTENTS :toc:
+- [[#hello][HELLO👋]]
+  - [[#staring][Staring:]]
+- [[#install][INSTALL]]
+  - [[#install-git][Install git]]
+  - [[#running-the-script][Running the script]]
+- [[#post-install][POST-INSTALL]]
+- [[#bindings][BINDINGS]]
+- [[#roadmap][ROADMAP]]
+- [[#credits][CREDITS]]
+
+* HELLO👋
+Feel free to explore and incorporate what you like into your own configs. If you have any questions, comments or suggestions, open an issue or PR!
+** Staring:
+Window manager ->  [[https://github.com/hyprwm/Hyprland][hyprland]]
+ Shell ->  [[eww:https://github.com/akinomyoga/ble.sh][ble.sh]] [[eww:https://www.gnu.org/software/bash/][bash]]
+ ->  [[eww:https://sw.kovidgoyal.net/kitty/][kitty]]
+ ->  [[eww:https://github.com/Alexays/Waybar][waybar]]
+ ->  [[eww:https://github.com/scorpion-26/gBar][gBar]]
+ ->  [[eww:https://github.com/dunst-project/dunst][dunst]]
+ ->  [[https://github.com/davatorium/rofi][rofi]]
+ ->  [[eww:https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][dired]]
+ ->  [[eww:https://wiki.archlinux.org/title/Thunar][thunar]]
+ ->  [[eww:https://www.gnu.org/software/emacs/][emacs]]
+ ->  [[eww:https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][eshell]]
+* INSTALL
+** Install git 
+** Running the script
+* POST-INSTALL
+* BINDINGS
+* ROADMAP
+* CREDITS
