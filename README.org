@@ -17,8 +17,8 @@ file:Documents/desktop.png
 #+begin_src shell
 sudo pacman -Syu git
 #+end_src
-Remeber to backup your files
-The Script must be run from from the base of the repo as shown below
+Remeber to BACKUP your files
+The Script MUST be run from from the base of the repo as shown below
 ** Running the script
 #+begin_src shell
 git clone https://github.com/TobyM7/Hyprland-Dotfiles.git
