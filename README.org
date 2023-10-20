@@ -2,7 +2,9 @@
 #+STARTUP: showeverything
 * HELLO👋
 Feel free to explore and incorporate what you like into your own configs. If you have any questions, comments or suggestions, open an issue or PR!
-file:Documents/desktop.png 
+/My Desktop/
+#+attr_html: :width 720px
+[[./Documents/desktop.png]] 
 ** Staring:
  -  Window Manager ->  [[https://github.com/hyprwm/Hyprland][hyprland]]
  -  Shell ->  [[https://www.gnu.org/software/bash/][bash with ]][[https://github.com/akinomyoga/ble.sh][ble.sh]] 
