@@ -216,6 +216,20 @@ windowrule = workspace 1, Emacs
 windowrule = float , riseup-vpn 
 windowrule = workspace 3,riseup-vpn
 windowrule = workspace 3, org.keepassxc.KeePassXC
+windowrulev2 = float,class:^(org.twosheds.iwgtk)$
+windowrulev2 = float,class:^(blueberry.py)$
+windowrulev2 = float,class:^(xdg-desktop-portal-gtk)$
+windowrulev2 = float,class:^(geeqie)$
+^.*nvim.*$
+bindm=SUPER,mouse:272,movewindow
+bindm=SUPER,mouse:273,resizewindow
+windowrule = fullscreen, Brave-browser
+windowrule = workspace 2, Brave-browser
+windowrule = fullscreen, Emacs 
+windowrule = workspace 1, Emacs
+windowrule = float , riseup-vpn 
+windowrule = workspace 3,riseup-vpn
+windowrule = workspace 3, org.keepassxc.KeePassXC
 #+end_src
 * KEYBINDINGS
 ** Screenshot
