@@ -207,10 +207,10 @@ windowrule = size 800 600, title:^(Volume Control)$
 windowrule = move 75 44%, title:^(Volume Control)$
 windowrule = fullscreen, wlogoutq
 windowrule = fullscreen, title:wlogout
-windowrulev2 = float,class:^(brave)$,title:^(Save File)$
-windowrulev2 = float,class:^(brave)$,title:^(Open File)$
-windowrule = fullscreen, Brave-browser
-windowrule = workspace 2, Brave-browser
+windowrulev2 = float,class:^(thorium)$,title:^(Save File)$
+windowrulev2 = float,class:^(thorium)$,title:^(Open File)$
+windowrule = fullscreen, Thorium-browser
+windowrule = workspace 2,Thorium-browser
 windowrule = fullscreen, Emacs 
 windowrule = workspace 1, Emacs
 windowrule = float , riseup-vpn 
@@ -223,13 +223,6 @@ windowrulev2 = float,class:^(geeqie)$
 ^.*nvim.*$
 bindm=SUPER,mouse:272,movewindow
 bindm=SUPER,mouse:273,resizewindow
-windowrule = fullscreen, Brave-browser
-windowrule = workspace 2, Brave-browser
-windowrule = fullscreen, Emacs 
-windowrule = workspace 1, Emacs
-windowrule = float , riseup-vpn 
-windowrule = workspace 3,riseup-vpn
-windowrule = workspace 3, org.keepassxc.KeePassXC
 #+end_src
 * KEYBINDINGS
 ** Screenshot
@@ -244,7 +237,7 @@ bind = ALT, Print, exec, grimblast --notify --cursor copysave screen
 #+begin_src shell
 bind = SUPER, R, exec, gBar bar
 bind = SUPER SHIFT, R, exec,  killall gBar
-bind = SUPER, B, exec, brave 
+bind = SUPER, B, exec, thorium-browser 
 bind = SUPER SHIFT, P, exec, wlogout
 bind = SUPER, L, exec, swaylock
 bind = SUPER SHIFT, Return, exec, kitty
