@@ -1,3 +1,4 @@
+
 #+TITLE: My literate hyprland config
 #+AUTHOR: TobyM7
 #+PROPERTY: header-args :tangle hyprland.conf
@@ -115,7 +116,6 @@ misc {
 #+begin_src shell
 decoration {
   rounding = 19
-  multisample_edges = true
 #+end_src
 ** Opacity
 #+begin_src shell
@@ -207,10 +207,10 @@ windowrule = size 800 600, title:^(Volume Control)$
 windowrule = move 75 44%, title:^(Volume Control)$
 windowrule = fullscreen, wlogoutq
 windowrule = fullscreen, title:wlogout
-windowrulev2 = float,class:^(thorium)$,title:^(Save File)$
-windowrulev2 = float,class:^(thorium)$,title:^(Open File)$
-windowrule = fullscreen, Thorium-browser
-windowrule = workspace 2,Thorium-browser
+windowrulev2 = float,class:^(brave)$,title:^(Save File)$
+windowrulev2 = float,class:^(brave)$,title:^(Open File)$
+windowrule = fullscreen, Brave-browser
+windowrule = workspace 2,Brave-browser
 windowrule = fullscreen, Emacs 
 windowrule = workspace 1, Emacs
 windowrule = float , riseup-vpn 
@@ -237,7 +237,7 @@ bind = ALT, Print, exec, grimblast --notify --cursor copysave screen
 #+begin_src shell
 bind = SUPER, R, exec, gBar bar
 bind = SUPER SHIFT, R, exec,  killall gBar
-bind = SUPER, B, exec, thorium-browser 
+bind = SUPER, B, exec, brave 
 bind = SUPER SHIFT, P, exec, wlogout
 bind = SUPER, L, exec, swaylock
 bind = SUPER SHIFT, Return, exec, kitty
