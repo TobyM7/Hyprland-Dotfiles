@@ -12,6 +12,7 @@
 - [[#input][INPUT]]
 - [[#gestures][GESTURES]]
 - [[#general][GENERAL]]
+- [[#env][ENV]]
 - [[#misc][MISC]]
 - [[#decoration][DECORATION]]
   - [[#round-corners][Round Corners]]
@@ -85,8 +86,8 @@ gestures {
 #+begin_src shell
 
 general {
-  gaps_in=7.5
-  gaps_out=10
+  gaps_in=5
+  gaps_out=5
   border_size=3
   no_border_on_floating = true
   layout = master
@@ -97,6 +98,18 @@ general {
  
 }
 
+#+end_src
+* ENV
+#+begin_src shell
+env = XDG_CURRENT_DESKTOP,Hyprland
+env = XDG_SESSION_TYPE,wayland
+env = XDG_SESSION_DESKTOP,Hyprland
+env = QT_QPA_PLATFORM,wayland
+#env = QT_STYLE_OVERRIDE,kvantum
+env = QT_QPA_PLATFORMTHEME,qt5ct
+env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+env = QT_AUTO_SCREEN_SCALE_FACTOR,1
+env = MOZ_ENABLE_WAYLAND,1
 #+end_src
 * MISC
 #+begin_src shell
@@ -151,7 +164,10 @@ animations {
   enabled = true
   bezier = smoothOut, 0.36, 0, 0.66, -0.56
   bezier = smoothIn, 0.25, 1, 0.5, 1
-
+  bezier = wind, 0.05, 0.9, 0.1, 1.05
+  bezier = winIn, 0.1, 1.1, 0.1, 1.1
+  bezier = winOut, 0.3, -0.3, 0, 1
+  bezier = liner, 1, 1, 1, 1
   animation = windowsOut, 1, 4, smoothOut, slide
   animation = windowsMove, 1, 4, default
   animation = border, 1, 10, default
