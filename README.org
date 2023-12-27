@@ -1,7 +1,7 @@
 #+AUTHOR: TobyM7
 #+STARTUP: showeverything
 * HELLO👋
-This is now abandoned my hyprland config has now moved to nixos. It has not changed much but I am no longer daily driving this exact setup [[https://github.com/TobyM7/nixos-config][is here]].
+This is now abandoned my hyprland config has now moved to nixos. It has not changed much but I am no longer daily driving this exact setup. My new one [[https://github.com/TobyM7/nixos-config][is here]].
 /My Desktop/
 #+attr_html: :width 720px
 [[./Documents/desktop.png]] 
