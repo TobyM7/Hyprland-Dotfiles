@@ -1,12 +1,12 @@
 #+AUTHOR: TobyM7
 #+STARTUP: showeverything
 * HELLO👋
-Feel free to explore and incorporate what you like into your own configs. If you have any questions, comments or suggestions, open an issue or PR!
+This is now abandoned my hyprland config has now moved to nixos. It has not changed much but I am no longer daily driving this exact setup [[https://github.com/TobyM7/nixos-config][is here]].
 /My Desktop/
 #+attr_html: :width 720px
 [[./Documents/desktop.png]] 
 ** Staring:
- -  Window Manager ->  [[https://github.com/hyprwm/Hyprland][hyprland]]
+ -  Window Manager ->  [[https://github.com/hyprwm/Hyprland][hyprland]
  -  Shell ->  [[https://www.gnu.org/software/bash/][bash with ]][[https://github.com/akinomyoga/ble.sh][ble.sh]] 
  -  Terminal ->  [[https://sw.kovidgoyal.net/kitty/][kitty]] & [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][eshell]]
  -  Bar ->  [[https://github.com/Alexays/Waybar][waybar]] & [[https://github.com/scorpion-26/gBar][gBar]]
